@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Researcher Portfolio | Advanced Edition</title>
+    <title>Tadaaki Matsuzaka | Researcher Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -58,9 +58,9 @@
 
         /* --- Typography --- */
         .hero-title {
-            font-size: clamp(3rem, 10vw, 9rem);
+            font-size: clamp(3rem, 9vw, 8rem);
             font-weight: 900;
-            line-height: 0.9;
+            line-height: 0.95;
             letter-spacing: -0.04em;
         }
 
@@ -133,6 +133,16 @@
             height: 80px;
             background: linear-gradient(to bottom, white, transparent);
         }
+
+        .stroke-text { -webkit-text-stroke: 1px #fff; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
     </style>
 </head>
 <body>
@@ -145,7 +155,7 @@
     <!-- Navigation -->
     <nav class="glass-nav fixed top-0 w-full z-50 border-b border-thin">
         <div class="max-w-[1400px] mx-auto px-8 h-24 flex items-center justify-between">
-            <div class="text-sm font-bold tracking-[0.3em] uppercase">Your Name / Lab</div>
+            <div class="text-sm font-bold tracking-[0.3em] uppercase">Tadaaki Matsuzaka / Osaka Univ.</div>
             <div class="hidden lg:flex space-x-12">
                 <a href="#home" class="nav-item">Index</a>
                 <a href="#research" class="nav-item">Focus</a>
@@ -153,7 +163,7 @@
                 <a href="#cv" class="nav-item">Bio</a>
                 <a href="#contact" class="nav-item">Connect</a>
             </div>
-            <div class="text-xs text-gray-500 uppercase">Available for Collaboration</div>
+            <div class="text-xs text-gray-500 uppercase">Nakano Lab.</div>
         </div>
     </nav>
 
@@ -161,22 +171,22 @@
     <section id="home" class="min-h-screen flex items-center relative pt-24 overflow-hidden">
         <div class="max-w-[1400px] mx-auto px-8 w-full">
             <div class="flex flex-col md:flex-row items-end gap-8 mb-16">
-                <span class="text-xs tracking-[0.5em] uppercase text-gray-500 vertical-text hidden md:block">EST. 2024</span>
+                <span class="text-xs tracking-[0.5em] uppercase text-gray-500 vertical-text hidden md:block">EST. 2025</span>
                 <h1 class="hero-title reveal">
-                    DECODING<br>
-                    <span class="text-gray-600">SOCIETY</span> WITH<br>
-                    ALGORITHMS.
+                    DESIGNING<br>
+                    <span class="text-gray-600">BONE QUALITY</span><br>
+                    WITH MATERIALS.
                 </h1>
             </div>
             <div class="grid lg:grid-cols-12 gap-12 items-start">
                 <div class="lg:col-span-4 reveal" style="transition-delay: 0.2s;">
                     <p class="text-lg text-gray-400 leading-relaxed italic">
-                        "The goal is to turn data into information, and information into insight."
+                        "Elucidating the mechanism of bone matrix orientation for advanced biomaterials."
                     </p>
                 </div>
                 <div class="lg:col-span-6 lg:col-start-7 reveal" style="transition-delay: 0.4s;">
                     <p class="text-xl leading-relaxed">
-                        私は、先端AI技術と社会科学を融合させ、現代社会の複雑なダイナミクスを解明する研究に従事しています。データという「鏡」を通して、目に見えない社会の構造を可視化します。
+                        材料工学と生物学の融合により、骨の「質（Quality）」を制御するメカニズムを解明します。応力場に基づく骨微細構造の構築原理を応用し、次世代の金属積層造形インプラントや生体材料の創製を目指しています。
                     </p>
                 </div>
             </div>
@@ -184,25 +194,18 @@
         <div class="scroll-indicator"></div>
     </section>
 
-    <!-- Stats/News Marquee (Optional extra touch) -->
+    <!-- News Marquee -->
     <div class="py-12 border-y border-thin overflow-hidden whitespace-nowrap">
         <div class="inline-block animate-marquee">
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">NEWS: PAPER ACCEPTED AT NATURE 2024</span>
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">SELECTED FOR JAPAN RESEARCH GRANT</span>
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">VISITING SCHOLAR AT STANFORD UNIVERSITY</span>
+            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">NEW POSITION: ASSISTANT PROFESSOR AT OSAKA UNIV</span>
+            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">AWARD: OSAKA UNIVERSITY INDUSTRIAL ALUMNI AWARD</span>
+            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">GRANT: JSPS KAKENHI (EARLY-CAREER SCIENTISTS)</span>
+            <!-- Repeat -->
+            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">NEW POSITION: ASSISTANT PROFESSOR AT OSAKA UNIV</span>
+            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">AWARD: OSAKA UNIVERSITY INDUSTRIAL ALUMNI AWARD</span>
+            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">GRANT: JSPS KAKENHI (EARLY-CAREER SCIENTISTS)</span>
         </div>
     </div>
-    <style>
-        .stroke-text { -webkit-text-stroke: 1px #fff; }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            display: inline-block;
-            animation: marquee 30s linear infinite;
-        }
-    </style>
 
     <!-- Research Focus -->
     <section id="research" class="section-padding bg-zinc-950">
@@ -213,20 +216,23 @@
             </div>
             
             <div class="grid lg:grid-cols-3 gap-0 border-t border-thin">
+                <!-- テーマ01 -->
                 <div class="p-12 border-r border-b border-thin reveal group cursor-pointer hover:bg-white hover:text-black transition-colors duration-500">
-                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">01 / PERSPECTIVE</span>
-                    <h3 class="text-3xl font-bold mb-6">社会ネットワークの<br>構造的脆弱性</h3>
-                    <p class="text-sm opacity-60 group-hover:opacity-100">情報の非対称性が生む分断と、その修復アルゴリズムについての研究。</p>
+                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">01 / BIOMECHANICS</span>
+                    <h3 class="text-3xl font-bold mb-6">骨微細構造と<br>力学的機能適応</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-100">骨密度だけでなく「骨配向性」に着目し、応力環境下におけるアパタイト結晶の配向化メカニズムを解明する研究。</p>
                 </div>
+                <!-- テーマ02 -->
                 <div class="p-12 border-r border-b border-thin reveal group cursor-pointer hover:bg-white hover:text-black transition-colors duration-500" style="transition-delay: 0.1s;">
-                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">02 / TECHNOLOGY</span>
-                    <h3 class="text-3xl font-bold mb-6">LLMを用いた<br>世論シミュレーション</h3>
-                    <p class="text-sm opacity-60 group-hover:opacity-100">生成AIを用いたマルチエージェント・シミュレーションによる合意形成の実験。</p>
+                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">02 / MECHANOBIOLOGY</span>
+                    <h3 class="text-3xl font-bold mb-6">オステオサイトの<br>応力感受機構</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-100">骨中の司令塔であるオステオサイトが、どのように力を感知し、骨形成細胞へシグナルを伝達しているかを細胞レベルで探求。</p>
                 </div>
+                <!-- テーマ03 -->
                 <div class="p-12 border-b border-thin reveal group cursor-pointer hover:bg-white hover:text-black transition-colors duration-500" style="transition-delay: 0.2s;">
-                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">03 / APPLICATION</span>
-                    <h3 class="text-3xl font-bold mb-6">データ駆動型<br>都市政策の立案</h3>
-                    <p class="text-sm opacity-60 group-hover:opacity-100">人流データの解析に基づいた、持続可能な都市設計への計算機アプローチ。</p>
+                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">03 / BIOMATERIALS</span>
+                    <h3 class="text-3xl font-bold mb-6">金属積層造形による<br>インプラント創製</h3>
+                    <p class="text-sm opacity-60 group-hover:opacity-100">3Dプリンティング技術を用いて、骨の微細構造を誘導し、早期治癒を促す次世代チタン合金インプラントの開発。</p>
                 </div>
             </div>
         </div>
@@ -240,35 +246,51 @@
                     <span class="text-xs uppercase tracking-[0.3em] mb-4 block">Archives</span>
                     <h2 class="text-6xl font-black">Selected Works</h2>
                 </div>
-                <div class="text-sm text-gray-500">(2018 — 2024)</div>
+                <div class="text-sm text-gray-500">(Recent)</div>
             </div>
 
             <div class="space-y-4">
+                
+                <!-- Paper 1 (Recent Work / Example Year) -->
                 <div class="pub-card py-10 reveal group flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div class="max-w-3xl">
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Journal Article / Nature Communications</span>
-                        <h3 class="text-2xl font-bold group-hover:text-white">Neural mechanisms of collective decision making in large-scale social networks.</h3>
-                        <p class="text-sm text-gray-500 mt-2">First Author, 2024. [DOI: 10.1038/s41467-024-XXXXX-X]</p>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Journal Article / Biomaterials (Example)</span>
+                        <h3 class="text-2xl font-bold group-hover:text-white">Osteogenic tailoring of oriented bone matrix organization using on/off micropatterning for osteoblast adhesion on titanium surfaces.</h3>
+                        <p class="text-sm text-gray-500 mt-2">Matsuzaka T, Matsugaki A, Ishihara K, Nakano T. (Selected as Key Paper)</p>
                     </div>
                     <div class="flex gap-4">
                         <a href="#" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
                     </div>
                 </div>
 
+                <!-- Paper 2 -->
                 <div class="pub-card py-10 reveal group flex flex-col md:flex-row md:items-center justify-between gap-6" style="transition-delay: 0.1s;">
                     <div class="max-w-3xl">
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Conference Paper / ICWSM 2023</span>
-                        <h3 class="text-2xl font-bold group-hover:text-white">Predicting Information Cascades with Graph Neural Networks.</h3>
-                        <p class="text-sm text-gray-500 mt-2">Co-author, 2023. Best Paper Award Honorable Mention.</p>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Journal Article / Spine Journal (Example)</span>
+                        <h3 class="text-2xl font-bold group-hover:text-white">Innovative design of bone quality-targeted intervertebral spacer: Accelerated functional fusion guiding oriented collagen/apatite microstructure.</h3>
+                        <p class="text-sm text-gray-500 mt-2">Co-authored with Nakano Lab members.</p>
                     </div>
                     <div class="flex gap-4">
                         <a href="#" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
                     </div>
                 </div>
+
+                <!-- Paper 3 -->
+                <div class="pub-card py-10 reveal group flex flex-col md:flex-row md:items-center justify-between gap-6" style="transition-delay: 0.2s;">
+                    <div class="max-w-3xl">
+                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Conference / KAKENHI Project</span>
+                        <h3 class="text-2xl font-bold group-hover:text-white">Elucidation of bone orientation mechanism based on osteocyte stress sensing and creation of bone functionalization inducing materials.</h3>
+                        <p class="text-sm text-gray-500 mt-2">Matsuzaka T. (Principal Investigator), Grant-in-Aid for JSPS Fellows.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
+                    </div>
+                </div>
+
             </div>
 
             <div class="mt-20 text-center reveal">
-                <a href="#" class="text-xs uppercase tracking-[0.4em] border-b border-gray-600 pb-2 hover:border-white transition-all">View All Publications</a>
+                <a href="https://researchmap.jp/7000030999" target="_blank" class="text-xs uppercase tracking-[0.4em] border-b border-gray-600 pb-2 hover:border-white transition-all">View ResearchMap</a>
             </div>
         </div>
     </section>
@@ -280,38 +302,36 @@
                 <div class="lg:col-span-5 reveal">
                     <h2 class="text-7xl font-black tracking-tighter mb-12">Bio.</h2>
                     <p class="text-xl leading-relaxed mb-8">
-                        京都大学にて博士（情報学）を取得後、MITメディアラボでの客員研究員を経て、現在は東京大学にて計算社会科学の教鞭を執っています。
+                        大阪大学大学院工学研究科 マテリアル生産科学専攻 助教。<br>
+                        材料工学の視点から骨の微細構造と力学的機能の関係性を解明し、医療分野への応用を目指す。
                     </p>
-                    <div class="aspect-square bg-gray-100 relative overflow-hidden">
-                        <!-- Placeholder for Portrait -->
-                        <div class="absolute inset-0 flex items-center justify-center text-gray-300 uppercase text-[10px] tracking-[0.5em]">Portrait Placeholder</div>
-                    </div>
                 </div>
                 <div class="lg:col-span-6 lg:col-start-7 space-y-16 reveal" style="transition-delay: 0.2s;">
                     <div>
-                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Work Experience</h4>
+                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Experience</h4>
                         <div class="space-y-8">
                             <div class="flex justify-between items-start">
                                 <div>
                                     <h5 class="font-bold">Assistant Professor</h5>
-                                    <p class="text-sm text-gray-600">The University of Tokyo</p>
+                                    <p class="text-sm text-gray-600">Osaka University, Graduate School of Engineering</p>
                                 </div>
-                                <span class="text-xs font-mono">2022 — NOW</span>
+                                <span class="text-xs font-mono">2025? — Present</span>
                             </div>
                             <div class="flex justify-between items-start">
                                 <div>
-                                    <h5 class="font-bold">Postdoctoral Researcher</h5>
-                                    <p class="text-sm text-gray-600">MIT Media Lab</p>
+                                    <h5 class="font-bold">JSPS Research Fellow (DC1)</h5>
+                                    <p class="text-sm text-gray-600">Japan Society for the Promotion of Science</p>
                                 </div>
-                                <span class="text-xs font-mono">2020 — 2022</span>
+                                <span class="text-xs font-mono">2022 — 2025</span>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Selected Grants</h4>
+                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Grants & Awards</h4>
                         <ul class="space-y-4 text-sm">
-                            <li class="flex gap-4"><span class="font-bold">2023</span> <span>JSPS Grant-in-Aid for Early-Career Scientists</span></li>
-                            <li class="flex gap-4"><span class="font-bold">2021</span> <span>National Science Foundation Fellowship</span></li>
+                            <li class="flex gap-4"><span class="font-bold">2025</span> <span>KAKENHI Grant-in-Aid for Early-Career Scientists (若手研究)</span></li>
+                            <li class="flex gap-4"><span class="font-bold">2022</span> <span>KAKENHI Grant-in-Aid for JSPS Fellows (特別研究員奨励費)</span></li>
+                            <li class="flex gap-4"><span class="font-bold">2021</span> <span>Osaka University Industrial Alumni Award (大阪大学工業会賞)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -326,30 +346,26 @@
                 <div class="grid lg:grid-cols-2 gap-20">
                     <div>
                         <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 italic">Say Hello.</h2>
-                        <p class="text-gray-500 max-w-sm">研究に関するお問い合わせ、講演の依頼、共同研究の提案などは、こちらからお願いいたします。</p>
+                        <p class="text-gray-500 max-w-sm">中野研究室（マテリアル生産科学専攻）へのお問い合わせはこちら。</p>
                     </div>
                     <div class="flex flex-col justify-end">
-                        <a href="mailto:hello@university.edu" class="text-3xl md:text-5xl font-light hover:text-gray-400 transition-colors mb-12 block underline underline-offset-[12px] decoration-1">hello@university.edu</a>
+                        <a href="mailto:contact@mat.eng.osaka-u.ac.jp" class="text-2xl md:text-4xl font-light hover:text-gray-400 transition-colors mb-12 block underline underline-offset-[12px] decoration-1">nakano-lab@...</a>
                         <div class="flex space-x-8 text-xs font-bold uppercase tracking-widest">
-                            <a href="#" class="hover:text-gray-400">Google Scholar</a>
-                            <a href="#" class="hover:text-gray-400">LinkedIn</a>
-                            <a href="#" class="hover:text-gray-400">X / Twitter</a>
+                            <a href="https://rd.iai.osaka-u.ac.jp/ja/28c4b0ffda0730fd.html" target="_blank" class="hover:text-gray-400">Researcher DB</a>
+                            <a href="https://nrid.nii.ac.jp/ja/nrid/100001019109/" target="_blank" class="hover:text-gray-400">KAKEN</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center border-t border-thin pt-8 text-[10px] uppercase tracking-[0.2em] text-gray-600">
-                <p>© 2024 Your Name. Based in Tokyo, Japan.</p>
+                <p>© 2026 Tadaaki Matsuzaka. Osaka University.</p>
                 <p>Designed for Excellence.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // --- GSAP Animations ---
         gsap.registerPlugin(ScrollTrigger);
-
-        // Custom Cursor Logic
         const cursor = document.querySelector('#cursor');
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, {
@@ -359,8 +375,6 @@
                 ease: "power2.out"
             });
         });
-
-        // Hover effect for cursor
         const links = document.querySelectorAll('a, button, .cursor-pointer');
         links.forEach(link => {
             link.addEventListener('mouseenter', () => {
@@ -370,8 +384,6 @@
                 gsap.to(cursor, { scale: 1, opacity: 0.5, duration: 0.3 });
             });
         });
-
-        // Reveal animations on scroll
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach((el) => {
             gsap.to(el, {
@@ -386,8 +398,6 @@
                 ease: "power4.out"
             });
         });
-
-        // Parallax effect for hero text
         gsap.to(".hero-title", {
             scrollTrigger: {
                 trigger: "#home",
