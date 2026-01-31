@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tadaaki Matsuzaka | Researcher Portfolio</title>
+    <title>Researcher Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -11,401 +11,138 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&family=Noto+Sans+JP:wght@100;300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0a0a0a;
-            --text-color: #f5f5f7;
-            --accent-color: #ffffff;
-            --secondary-text: #86868b;
-        }
-
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* --- Custom Cursor --- */
-        #cursor {
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            mix-blend-mode: difference;
-        }
-
-        /* --- Layout Elements --- */
-        .glass-nav {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-
-        .section-padding {
-            padding: 160px 0;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        /* --- Typography --- */
-        .hero-title {
-            font-size: clamp(3rem, 9vw, 8rem);
-            font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-        }
-
-        .vertical-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-        }
-
-        /* --- Background Decoration --- */
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%);
-            overflow: hidden;
-        }
-
-        .blob {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: linear-gradient(135deg, #222 0%, #000 100%);
-            filter: blur(80px);
-            border-radius: 50%;
-            opacity: 0.4;
-            animation: move 20s infinite alternate;
-        }
-
-        @keyframes move {
-            from { transform: translate(-10%, -10%); }
-            to { transform: translate(20%, 20%); }
-        }
-
-        /* --- Component Styles --- */
-        .border-thin {
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .pub-card {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .pub-card:hover {
-            background: rgba(255, 255, 255, 0.03);
-            padding-left: 20px;
-        }
-
-        .nav-item {
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--secondary-text);
-            transition: color 0.3s;
-        }
-
-        .nav-item:hover {
-            color: var(--accent-color);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 80px;
-            background: linear-gradient(to bottom, white, transparent);
-        }
-
-        .stroke-text { -webkit-text-stroke: 1px #fff; }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            display: inline-block;
-            animation: marquee 30s linear infinite;
-        }
+        :root { --bg-color: #0a0a0a; --text-color: #f5f5f7; --accent-color: #ffffff; --secondary-text: #86868b; }
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; overflow-x: hidden; line-height: 1.6; }
+        #cursor { width: 20px; height: 20px; background: rgba(255, 255, 255, 0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; mix-blend-mode: difference; }
+        .glass-nav { background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .section-padding { padding: 120px 0; }
+        .reveal { opacity: 0; transform: translateY(30px); }
+        .hero-title { font-size: clamp(3rem, 10vw, 9rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; }
+        .border-thin { border-color: rgba(255, 255, 255, 0.1); }
+        .pub-card { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .pub-card:hover { background: rgba(255, 255, 255, 0.03); padding-left: 20px; }
+        .nav-item { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary-text); transition: color 0.3s; }
+        .nav-item:hover { color: var(--accent-color); }
+        .bg-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%); }
     </style>
 </head>
 <body>
-
     <div id="cursor"></div>
-    <div class="bg-gradient">
-        <div class="blob"></div>
-    </div>
+    <div class="bg-gradient"></div>
 
-    <!-- Navigation -->
     <nav class="glass-nav fixed top-0 w-full z-50 border-b border-thin">
         <div class="max-w-[1400px] mx-auto px-8 h-24 flex items-center justify-between">
-            <div class="text-sm font-bold tracking-[0.3em] uppercase">Tadaaki Matsuzaka / Osaka Univ.</div>
+            <div class="text-sm font-bold tracking-[0.3em] uppercase">Tadaaki / Portfolio</div>
             <div class="hidden lg:flex space-x-12">
-                <a href="#home" class="nav-item">Index</a>
-                <a href="#research" class="nav-item">Focus</a>
-                <a href="#publications" class="nav-item">Archive</a>
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#publications" class="nav-item">Achievements</a>
                 <a href="#cv" class="nav-item">Bio</a>
-                <a href="#contact" class="nav-item">Connect</a>
+                <a href="#contact" class="nav-item">Contact</a>
             </div>
-            <div class="text-xs text-gray-500 uppercase">Nakano Lab.</div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center relative pt-24 overflow-hidden">
+    <section id="home" class="min-h-screen flex items-center pt-24">
         <div class="max-w-[1400px] mx-auto px-8 w-full">
-            <div class="flex flex-col md:flex-row items-end gap-8 mb-16">
-                <span class="text-xs tracking-[0.5em] uppercase text-gray-500 vertical-text hidden md:block">EST. 2025</span>
-                <h1 class="hero-title reveal">
-                    DESIGNING<br>
-                    <span class="text-gray-600">BONE QUALITY</span><br>
-                    WITH MATERIALS.
-                </h1>
-            </div>
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
-                <div class="lg:col-span-4 reveal" style="transition-delay: 0.2s;">
-                    <p class="text-lg text-gray-400 leading-relaxed italic">
-                        "Elucidating the mechanism of bone matrix orientation for advanced biomaterials."
-                    </p>
-                </div>
-                <div class="lg:col-span-6 lg:col-start-7 reveal" style="transition-delay: 0.4s;">
-                    <p class="text-xl leading-relaxed">
-                        材料工学と生物学の融合により、骨の「質（Quality）」を制御するメカニズムを解明します。応力場に基づく骨微細構造の構築原理を応用し、次世代の金属積層造形インプラントや生体材料の創製を目指しています。
-                    </p>
-                </div>
-            </div>
+            <h1 class="hero-title reveal mb-12">REWRITING<br><span class="text-gray-600">SOCIETY</span><br>BY DATA.</h1>
+            <p class="text-xl max-w-2xl reveal text-gray-400" style="transition-delay: 0.3s;">先端AI技術と社会科学を融合し、データの力で社会の構造を解き明かす研究に取り組んでいます。</p>
         </div>
-        <div class="scroll-indicator"></div>
     </section>
 
-    <!-- News Marquee -->
-    <div class="py-12 border-y border-thin overflow-hidden whitespace-nowrap">
-        <div class="inline-block animate-marquee">
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">NEW POSITION: ASSISTANT PROFESSOR AT OSAKA UNIV</span>
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">AWARD: OSAKA UNIVERSITY INDUSTRIAL ALUMNI AWARD</span>
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">GRANT: JSPS KAKENHI (EARLY-CAREER SCIENTISTS)</span>
-            <!-- Repeat -->
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">NEW POSITION: ASSISTANT PROFESSOR AT OSAKA UNIV</span>
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">AWARD: OSAKA UNIVERSITY INDUSTRIAL ALUMNI AWARD</span>
-            <span class="text-4xl font-black text-transparent stroke-text opacity-20 mx-12">GRANT: JSPS KAKENHI (EARLY-CAREER SCIENTISTS)</span>
-        </div>
-    </div>
-
-    <!-- Research Focus -->
-    <section id="research" class="section-padding bg-zinc-950">
+    <section id="publications" class="section-padding border-t border-thin">
         <div class="max-w-[1400px] mx-auto px-8">
-            <div class="flex items-center gap-4 mb-20 reveal">
-                <div class="w-12 h-[1px] bg-white"></div>
-                <span class="text-xs uppercase tracking-[0.3em]">Research Focus</span>
+            <div class="mb-24 reveal">
+                <span class="text-xs uppercase tracking-[0.3em] mb-4 block text-gray-500">Academic Records</span>
+                <h2 class="text-6xl font-black">Achievements</h2>
             </div>
-            
-            <div class="grid lg:grid-cols-3 gap-0 border-t border-thin">
-                <!-- テーマ01 -->
-                <div class="p-12 border-r border-b border-thin reveal group cursor-pointer hover:bg-white hover:text-black transition-colors duration-500">
-                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">01 / BIOMECHANICS</span>
-                    <h3 class="text-3xl font-bold mb-6">骨微細構造と<br>力学的機能適応</h3>
-                    <p class="text-sm opacity-60 group-hover:opacity-100">骨密度だけでなく「骨配向性」に着目し、応力環境下におけるアパタイト結晶の配向化メカニズムを解明する研究。</p>
-                </div>
-                <!-- テーマ02 -->
-                <div class="p-12 border-r border-b border-thin reveal group cursor-pointer hover:bg-white hover:text-black transition-colors duration-500" style="transition-delay: 0.1s;">
-                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">02 / MECHANOBIOLOGY</span>
-                    <h3 class="text-3xl font-bold mb-6">オステオサイトの<br>応力感受機構</h3>
-                    <p class="text-sm opacity-60 group-hover:opacity-100">骨中の司令塔であるオステオサイトが、どのように力を感知し、骨形成細胞へシグナルを伝達しているかを細胞レベルで探求。</p>
-                </div>
-                <!-- テーマ03 -->
-                <div class="p-12 border-b border-thin reveal group cursor-pointer hover:bg-white hover:text-black transition-colors duration-500" style="transition-delay: 0.2s;">
-                    <span class="text-xs mb-8 block text-gray-500 group-hover:text-black">03 / BIOMATERIALS</span>
-                    <h3 class="text-3xl font-bold mb-6">金属積層造形による<br>インプラント創製</h3>
-                    <p class="text-sm opacity-60 group-hover:opacity-100">3Dプリンティング技術を用いて、骨の微細構造を誘導し、早期治癒を促す次世代チタン合金インプラントの開発。</p>
-                </div>
-            </div>
+            <div id="achievement-sections" class="space-y-24"></div>
         </div>
     </section>
 
-    <!-- Publications -->
-    <section id="publications" class="section-padding">
-        <div class="max-w-[1400px] mx-auto px-8">
-            <div class="flex justify-between items-end mb-24 reveal">
-                <div>
-                    <span class="text-xs uppercase tracking-[0.3em] mb-4 block">Archives</span>
-                    <h2 class="text-6xl font-black">Selected Works</h2>
-                </div>
-                <div class="text-sm text-gray-500">(Recent)</div>
-            </div>
-
-            <div class="space-y-4">
-                
-                <!-- Paper 1 (Recent Work / Example Year) -->
-                <div class="pub-card py-10 reveal group flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div class="max-w-3xl">
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Journal Article / Biomaterials (Example)</span>
-                        <h3 class="text-2xl font-bold group-hover:text-white">Osteogenic tailoring of oriented bone matrix organization using on/off micropatterning for osteoblast adhesion on titanium surfaces.</h3>
-                        <p class="text-sm text-gray-500 mt-2">Matsuzaka T, Matsugaki A, Ishihara K, Nakano T. (Selected as Key Paper)</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
-                    </div>
-                </div>
-
-                <!-- Paper 2 -->
-                <div class="pub-card py-10 reveal group flex flex-col md:flex-row md:items-center justify-between gap-6" style="transition-delay: 0.1s;">
-                    <div class="max-w-3xl">
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Journal Article / Spine Journal (Example)</span>
-                        <h3 class="text-2xl font-bold group-hover:text-white">Innovative design of bone quality-targeted intervertebral spacer: Accelerated functional fusion guiding oriented collagen/apatite microstructure.</h3>
-                        <p class="text-sm text-gray-500 mt-2">Co-authored with Nakano Lab members.</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
-                    </div>
-                </div>
-
-                <!-- Paper 3 -->
-                <div class="pub-card py-10 reveal group flex flex-col md:flex-row md:items-center justify-between gap-6" style="transition-delay: 0.2s;">
-                    <div class="max-w-3xl">
-                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">Conference / KAKENHI Project</span>
-                        <h3 class="text-2xl font-bold group-hover:text-white">Elucidation of bone orientation mechanism based on osteocyte stress sensing and creation of bone functionalization inducing materials.</h3>
-                        <p class="text-sm text-gray-500 mt-2">Matsuzaka T. (Principal Investigator), Grant-in-Aid for JSPS Fellows.</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-20 text-center reveal">
-                <a href="https://researchmap.jp/7000030999" target="_blank" class="text-xs uppercase tracking-[0.4em] border-b border-gray-600 pb-2 hover:border-white transition-all">View ResearchMap</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Biography / CV -->
     <section id="cv" class="section-padding bg-white text-black">
         <div class="max-w-[1400px] mx-auto px-8">
-            <div class="grid lg:grid-cols-12 gap-20">
-                <div class="lg:col-span-5 reveal">
-                    <h2 class="text-7xl font-black tracking-tighter mb-12">Bio.</h2>
-                    <p class="text-xl leading-relaxed mb-8">
-                        大阪大学大学院工学研究科 マテリアル生産科学専攻 助教。<br>
-                        材料工学の視点から骨の微細構造と力学的機能の関係性を解明し、医療分野への応用を目指す。
-                    </p>
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="reveal">
+                    <h2 class="text-7xl font-black mb-12">Bio.</h2>
+                    <p class="text-xl leading-relaxed">ここにご自身の経歴などのプロフィールを記載してください。</p>
                 </div>
-                <div class="lg:col-span-6 lg:col-start-7 space-y-16 reveal" style="transition-delay: 0.2s;">
+                <div class="space-y-12 reveal">
                     <div>
-                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Experience</h4>
-                        <div class="space-y-8">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h5 class="font-bold">Assistant Professor</h5>
-                                    <p class="text-sm text-gray-600">Osaka University, Graduate School of Engineering</p>
-                                </div>
-                                <span class="text-xs font-mono">2025? — Present</span>
-                            </div>
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <h5 class="font-bold">JSPS Research Fellow (DC1)</h5>
-                                    <p class="text-sm text-gray-600">Japan Society for the Promotion of Science</p>
-                                </div>
-                                <span class="text-xs font-mono">2022 — 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Grants & Awards</h4>
-                        <ul class="space-y-4 text-sm">
-                            <li class="flex gap-4"><span class="font-bold">2025</span> <span>KAKENHI Grant-in-Aid for Early-Career Scientists (若手研究)</span></li>
-                            <li class="flex gap-4"><span class="font-bold">2022</span> <span>KAKENHI Grant-in-Aid for JSPS Fellows (特別研究員奨励費)</span></li>
-                            <li class="flex gap-4"><span class="font-bold">2021</span> <span>Osaka University Industrial Alumni Award (大阪大学工業会賞)</span></li>
-                        </ul>
+                        <h4 class="text-xs font-bold uppercase tracking-widest border-b border-black/10 pb-4 mb-8">Selected Grants</h4>
+                        <ul id="grants-list" class="space-y-4 text-sm"></ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact" class="bg-black text-white pt-32 pb-16">
-        <div class="max-w-[1400px] mx-auto px-8">
-            <div class="border-t border-thin pt-24 mb-32 reveal">
-                <div class="grid lg:grid-cols-2 gap-20">
-                    <div>
-                        <h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 italic">Say Hello.</h2>
-                        <p class="text-gray-500 max-w-sm">中野研究室（マテリアル生産科学専攻）へのお問い合わせはこちら。</p>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                        <a href="mailto:contact@mat.eng.osaka-u.ac.jp" class="text-2xl md:text-4xl font-light hover:text-gray-400 transition-colors mb-12 block underline underline-offset-[12px] decoration-1">nakano-lab@...</a>
-                        <div class="flex space-x-8 text-xs font-bold uppercase tracking-widest">
-                            <a href="https://rd.iai.osaka-u.ac.jp/ja/28c4b0ffda0730fd.html" target="_blank" class="hover:text-gray-400">Researcher DB</a>
-                            <a href="https://nrid.nii.ac.jp/ja/nrid/100001019109/" target="_blank" class="hover:text-gray-400">KAKEN</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between items-center border-t border-thin pt-8 text-[10px] uppercase tracking-[0.2em] text-gray-600">
-                <p>© 2026 Tadaaki Matsuzaka. Osaka University.</p>
-                <p>Designed for Excellence.</p>
-            </div>
+    <footer id="contact" class="section-padding bg-black text-white border-t border-thin">
+        <div class="max-w-[1400px] mx-auto px-8 text-center">
+            <h2 class="text-5xl font-black mb-8 italic">Say Hello.</h2>
+            <a href="mailto:your-email@example.com" class="text-3xl font-light underline underline-offset-8">Contact Me</a>
         </div>
     </footer>
 
+    <script src="data.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
+
+        const categories = [
+            { key: 'publications', title: '論文 / Publications' },
+            { key: 'reviews', title: '解説・総説 / Reviews' },
+            { key: 'books', title: '著書 / Books' },
+            { key: 'patents', title: '特許 / Patents' },
+            { key: 'media', title: '報道関係 / Media' },
+            { key: 'presentations', title: '学会発表 / Presentations' },
+            { key: 'awards', title: '受賞 / Awards' }
+        ];
+
+        function init() {
+            if (typeof myData === 'undefined') return;
+
+            const container = document.getElementById('achievement-sections');
+            
+            categories.forEach(cat => {
+                const items = myData[cat.key];
+                if (items && items.length > 0) {
+                    const section = document.createElement('div');
+                    section.className = 'reveal';
+                    section.innerHTML = `
+                        <h3 class="text-xl font-bold border-b border-white/20 pb-4 mb-8 text-gray-400">${cat.title}</h3>
+                        <div class="space-y-2">
+                            ${items.map(item => `
+                                <div class="pub-card py-8 group flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                    <div class="max-w-3xl">
+                                        <span class="text-[10px] uppercase tracking-widest text-gray-500 mb-2 block">${item.category}</span>
+                                        <h4 class="text-xl font-bold group-hover:text-white transition-colors">${item.title}</h4>
+                                        <p class="text-sm text-gray-600 mt-2">${item.info}</p>
+                                    </div>
+                                    <a href="${item.link}" class="w-12 h-12 rounded-full border border-thin flex items-center justify-center hover:bg-white hover:text-black transition-all">→</a>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.appendChild(section);
+                }
+            });
+
+            const grantsList = document.getElementById('grants-list');
+            if (myData.grants) {
+                grantsList.innerHTML = myData.grants.map(g => `<li class="flex gap-4"><span class="font-bold">${g.year}</span> <span>${g.name}</span></li>`).join('');
+            }
+
+            // Animate
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.to(el, { scrollTrigger: { trigger: el, start: "top 90%" }, opacity: 1, y: 0, duration: 1, ease: "power3.out" });
+            });
+        }
+
+        window.onload = init;
+
+        // Cursor
         const cursor = document.querySelector('#cursor');
         document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, {
-                x: e.clientX - 10,
-                y: e.clientY - 10,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-        });
-        const links = document.querySelectorAll('a, button, .cursor-pointer');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                gsap.to(cursor, { scale: 3, opacity: 0.2, duration: 0.3 });
-            });
-            link.addEventListener('mouseleave', () => {
-                gsap.to(cursor, { scale: 1, opacity: 0.5, duration: 0.3 });
-            });
-        });
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach((el) => {
-            gsap.to(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1.2,
-                ease: "power4.out"
-            });
-        });
-        gsap.to(".hero-title", {
-            scrollTrigger: {
-                trigger: "#home",
-                start: "top top",
-                scrub: true
-            },
-            y: 100,
-            opacity: 0.5
+            gsap.to(cursor, { x: e.clientX - 10, y: e.clientY - 10, duration: 0.1 });
         });
     </script>
 </body>
